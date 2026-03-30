@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our complete collection of premium eBooks">
+    <title>Store | BookVerse</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="book-loader">
+                <div class="book-page"></div>
+                <div class="book-page"></div>
+                <div class="book-page"></div>
+            </div>
+            <p class="loading-text">Loading store...</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation (Same as index.html) -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">📚</span>
+                <span class="logo-text">Book<span class="logo-accent">Verse</span></span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="store.html" class="nav-link active">Store</a></li>
+                <li><a href="index.html#featured" class="nav-link">Featured</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="nav-search-btn" id="searchToggle">
+                    <i class="ri-search-line"></i>
+                </button>
+                <a href="cart.html" class="nav-cart">
+                    <i class="ri-shopping-bag-3-line"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <a href="auth.html" class="nav-auth-btn">
+                    <i class="ri-user-line"></i>
+                    <span>Sign In</span>
+                </a>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Store Header -->
+    <section class="store-header">
+        <div class="container">
+            <div class="store-header-content animate-on-scroll">
+                <h1>eBook Store</h1>
+                <p>Explore our complete collection of premium digital books</p>
+            </div>
+        </div>
+        <div class="store-header-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+        </div>
+    </section>
+
+    <!-- Store Content -->
+    <section class="store-content">
+        <div class="container">
+            <div class="store-layout">
+                <!-- Sidebar Filters -->
+                <aside class="store-sidebar" id="storeSidebar">
+                    <div class="sidebar-header">
+                        <h3>Filters</h3>
+                        <button class="clear-filters" id="clearFilters">Clear All</button>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Search</h4>
+                        <div class="search-box">
+                            <i class="ri-search-line"></i>
+                            <input type="text" id="searchInput" placeholder="Search books...">
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Categories</h4>
+                        <div class="filter-options" id="categoryFilters">
+                            <label class="filter-option">
+                                <input type="checkbox" value="all" checked>
+                                <span class="checkmark"></span>
+                                <span>All Categories</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="productivity">
+                                <span class="checkmark"></span>
+                                <span>Productivity</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="design">
+                                <span class="checkmark"></span>
+                                <span>Design</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="technology">
+                                <span class="checkmark"></span>
+                                <span>Technology</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="business">
+                                <span class="checkmark"></span>
+                                <span>Business</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="mindfulness">
+                                <span class="checkmark"></span>
+                                <span>Mindfulness</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="finance">
+                                <span class="checkmark"></span>
+                                <span>Finance</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Price Range</h4>
+                        <div class="price-range">
+                            <input type="range" id="priceRange" min="0" max="100" value="100">
+                            <div class="price-labels">
+                                <span>$0</span>
+                                <span id="priceValue">$100</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Rating</h4>
+                        <div class="filter-options" id="ratingFilters">
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="all" checked>
+                                <span class="checkmark radio"></span>
+                                <span>All Ratings</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="4">
+                                <span class="checkmark radio"></span>
+                                <span>4+ Stars</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="4.5">
+                                <span class="checkmark radio"></span>
+                                <span>4.5+ Stars</span>
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Store Grid -->
+                <main class="store-main">
+                    <div class="store-toolbar">
+                        <div class="results-count">
+                            <span id="resultsCount">8</span> books found
+                        </div>
+                        <div class="toolbar-actions">
+                            <button class="filter-toggle" id="filterToggle">
+                                <i class="ri-filter-3-line"></i>
+                                <span>Filters</span>
+                            </button>
+                            <div class="sort-dropdown">
+                                <select id="sortSelect">
+                                    <option value="featured">Featured</option>
+                                    <option value="newest">Newest</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="rating">Highest Rated</option>
+                                </select>
+                            </div>
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid">
+                                    <i class="ri-grid-fill"></i>
+                                </button>
+                                <button class="view-btn" data-view="list">
+                                    <i class="ri-list-check"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="books-grid" id="storeBooks">
+                        <!-- Books will be dynamically inserted here -->
+                    </div>
+                    
+                    <div class="store-pagination" id="pagination">
+                        <!-- Pagination will be generated dynamically -->
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 BookVerse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="ri-close-line"></i>
+            </button>
+            <div class="modal-body" id="quickViewContent"></div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/animations.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
