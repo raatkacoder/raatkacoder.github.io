@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details | BookVerse</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="book-loader">
+                <div class="book-page"></div>
+                <div class="book-page"></div>
+                <div class="book-page"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">📚</span>
+                <span class="logo-text">Book<span class="logo-accent">Verse</span></span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="store.html" class="nav-link">Store</a></li>
+                <li><a href="index.html#featured" class="nav-link">Featured</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="cart.html" class="nav-cart">
+                    <i class="ri-shopping-bag-3-line"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <a href="auth.html" class="nav-auth-btn">
+                    <i class="ri-user-line"></i>
+                    <span>Sign In</span>
+                </a>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Book Detail -->
+    <section class="book-detail" id="bookDetail">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb animate-on-scroll">
+                <a href="index.html">Home</a>
+                <i class="ri-arrow-right-s-line"></i>
+                <a href="store.html">Store</a>
+                <i class="ri-arrow-right-s-line"></i>
+                <span id="bookBreadcrumb">Book Title</span>
+            </nav>
+
+            <div class="book-detail-content">
+                <!-- Book Cover -->
+                <div class="book-cover-section animate-on-scroll">
+                    <div class="book-cover-wrapper">
+                        <div class="book-cover-3d">
+                            <div class="book-cover-main" id="bookCoverMain">
+                                <img src="" alt="Book Cover" id="bookCoverImg">
+                            </div>
+                            <div class="book-cover-spine"></div>
+                            <div class="book-cover-back"></div>
+                        </div>
+                        <div class="book-cover-shadow"></div>
+                    </div>
+                    <div class="book-preview-btn">
+                        <button class="btn btn-outline" id="previewBtn">
+                            <i class="ri-eye-line"></i>
+                            <span>Preview Book</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Book Info -->
+                <div class="book-info-section animate-on-scroll">
+                    <div class="book-badges">
+                        <span class="badge badge-new" id="badgeNew" style="display: none;">New</span>
+                        <span class="badge badge-bestseller" id="badgeBestseller" style="display: none;">Bestseller</span>
+                    </div>
+                    
+                    <h1 class="book-title" id="bookTitle">Loading...</h1>
+                    <p class="book-author" id="bookAuthor">By Author Name</p>
+                    
+                    <div class="book-meta">
+                        <div class="book-rating" id="bookRating">
+                            <div class="stars">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                            <span class="rating-value">4.8</span>
+                            <span class="rating-count">(128 reviews)</span>
+                        </div>
+                        <span class="book-category" id="bookCategory">Category</span>
+                    </div>
+                    
+                    <div class="book-price-section">
+                        <span class="book-price" id="bookPrice">$29.99</span>
+                        <span class="book-original-price" id="bookOriginalPrice">$49.99</span>
+                        <span class="book-discount" id="bookDiscount">40% OFF</span>
+                    </div>
+                    
+                    <p class="book-description" id="bookDescription">
+                        Loading book description...
+                    </p>
+                    
+                    <div class="book-features">
+                        <div class="feature">
+                            <i class="ri-file-pdf-line"></i>
+                            <span>PDF Format</span>
+                        </div>
+                        <div class="feature">
+                            <i class="ri-pages-line"></i>
+                            <span id="bookPages">200+ Pages</span>
+                        </div>
+                        <div class="feature">
+                            <i class="ri-download-cloud-2-line"></i>
+                            <span>Instant Download</span>
+                        </div>
+                        <div class="feature">
+                            <i class="ri-refresh-line"></i>
+                            <span>Free Updates</span>
+                        </div>
+                    </div>
+                    
+                    <div class="book-actions">
+                        <button class="btn btn-primary btn-lg add-to-cart-btn magnetic" id="addToCartBtn">
+                            <i class="ri-shopping-bag-3-line"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                        <button class="btn btn-secondary btn-lg buy-now-btn magnetic" id="buyNowBtn">
+                            <span>Buy Now</span>
+                            <i class="ri-arrow-right-line"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="book-guarantee">
+                        <i class="ri-shield-check-line"></i>
+                        <span>30-day money-back guarantee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Learn -->
+    <section class="book-learn">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>What You'll Learn</h2>
+            </div>
+            <div class="learn-grid" id="learnGrid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="book-toc">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Table of Contents</h2>
+            </div>
+            <div class="toc-list" id="tocList">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Books -->
+    <section class="related-books">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>You Might Also Like</h2>
+            </div>
+            <div class="books-grid" id="relatedBooks">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 BookVerse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/animations.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/book-detail.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
