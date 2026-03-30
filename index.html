@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 Epic Meme Generator - Make Memes Like a Boss</title>
+    <meta name="description" content="Create hilarious memes instantly! The best free online meme generator with trending templates.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Impact&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">🔥 MEME GENERATOR</h1>
+            <p class="tagline">Make the Internet Laugh!</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Meme Templates Section -->
+        <section class="templates-section">
+            <h2>🎭 Choose Your Template</h2>
+            <div class="template-grid" id="templateGrid">
+                <div class="loading">Loading epic templates... 🚀</div>
+            </div>
+            <button class="btn btn-secondary" id="loadMoreBtn">Load More Memes 📦</button>
+        </section>
+
+        <!-- Meme Editor Section -->
+        <section class="editor-section" id="editorSection" style="display: none;">
+            <h2>✨ Create Your Masterpiece</h2>
+            
+            <div class="editor-container">
+                <!-- Canvas Area -->
+                <div class="canvas-area">
+                    <canvas id="memeCanvas"></canvas>
+                    <div class="canvas-controls">
+                        <button class="btn btn-primary" id="downloadBtn">⬇️ Download Meme</button>
+                        <button class="btn btn-secondary" id="shareBtn">📤 Share</button>
+                        <button class="btn btn-danger" id="resetBtn">🔄 Reset</button>
+                    </div>
+                </div>
+
+                <!-- Controls Area -->
+                <div class="controls-area">
+                    <div class="control-group">
+                        <label>😂 Top Text</label>
+                        <input type="text" id="topText" placeholder="Enter top text..." maxlength="100">
+                    </div>
+
+                    <div class="control-group">
+                        <label>🤣 Bottom Text</label>
+                        <input type="text" id="bottomText" placeholder="Enter bottom text..." maxlength="100">
+                    </div>
+
+                    <div class="control-group">
+                        <label>📏 Font Size: <span id="fontSizeValue">40</span>px</label>
+                        <input type="range" id="fontSize" min="20" max="80" value="40">
+                    </div>
+
+                    <div class="control-group">
+                        <label>🎨 Text Color</label>
+                        <div class="color-options">
+                            <button class="color-btn active" data-color="#FFFFFF" style="background: #FFFFFF; border: 2px solid #000;"></button>
+                            <button class="color-btn" data-color="#000000" style="background: #000000;"></button>
+                            <button class="color-btn" data-color="#FF0000" style="background: #FF0000;"></button>
+                            <button class="color-btn" data-color="#00FF00" style="background: #00FF00;"></button>
+                            <button class="color-btn" data-color="#0000FF" style="background: #0000FF;"></button>
+                            <button class="color-btn" data-color="#FFFF00" style="background: #FFFF00;"></button>
+                            <button class="color-btn" data-color="#FF00FF" style="background: #FF00FF;"></button>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>🖼️ Upload Custom Image</label>
+                        <input type="file" id="imageUpload" accept="image/*">
+                    </div>
+
+                    <div class="meme-stats">
+                        <div class="stat">
+                            <span class="stat-number" id="memeCount">0</span>
+                            <span class="stat-label">Memes Created</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Random Meme Section -->
+        <section class="random-section">
+            <h2>🎲 Need Inspiration?</h2>
+            <button class="btn btn-large btn-primary" id="randomMemeBtn">Generate Random Meme! 🎰</button>
+            <div id="randomMemeContainer"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Made with 💖 by Meme Lords | Share the Laughter! 🚀</p>
+            <div class="social-links">
+                <a href="#" class="social-btn">Twitter 🐦</a>
+                <a href="#" class="social-btn">Reddit 👽</a>
+                <a href="#" class="social-btn">Instagram 📸</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
